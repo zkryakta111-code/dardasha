@@ -105,12 +105,12 @@ header.bar h2{margin:0;font-size:1.15rem;flex:1}
 <script type="module">
 /* ====== الصق إعدادات Firebase هون (من إعدادات المشروع ← تطبيق الويب) ====== */
 const firebaseConfig = {
-  apiKey: "PASTE_HERE",
-  authDomain: "PASTE_HERE",
-  projectId: "PASTE_HERE",
-  storageBucket: "PASTE_HERE",
-  messagingSenderId: "PASTE_HERE",
-  appId: "PASTE_HERE"
+  apiKey: "AIzaSyDwCuVf5mEBmGEkoS3uaQWAmZPdDGvWuPM",
+  authDomain: "zekoapp.firebaseapp.com",
+  projectId: "zekoapp",
+  storageBucket: "zekoapp.firebasestorage.app",
+  messagingSenderId: "363163831811",
+  appId: "1:363163831811:web:b055b14c87d7e71c638836"
 };
 /* ======================================================================== */
 
@@ -123,7 +123,7 @@ import { getFirestore, doc, getDoc, setDoc, runTransaction, collection, query, w
 const $ = (id) => document.getElementById(id);
 function show(id) { document.querySelectorAll('.screen').forEach(s => s.classList.remove('on')); $(id).classList.add('on'); }
 
-if (firebaseConfig.apiKey === "PASTE_HERE") { show('s-setup'); throw new Error("Firebase config missing"); }
+if (!firebaseConfig.apiKey || firebaseConfig.apiKey === "PASTE_HERE") { show('s-setup'); throw new Error("Firebase config missing"); }
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
